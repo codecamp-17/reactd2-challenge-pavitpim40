@@ -55,6 +55,22 @@ function Banner(props) {
   );
 }
 
+function Properties() {
+  return (
+    <section className='properties'>
+      <div>Title</div>
+      <div className='grid__container'>
+        <div className='grid__item item-1'>1</div>
+        <div className='grid__item item-2'>2</div>
+        <div className='grid__item item-3'>3</div>
+        <div className='grid__item item-4'>4</div>
+        <div className='grid__item item-5'>5</div>
+        <div className='grid__item item-6'>6</div>
+      </div>
+    </section>
+  );
+}
+
 // ### LV.1
 
 function Navbar() {
@@ -72,7 +88,7 @@ function Main() {
         withTab={true}
       />
       <StoryList />
-      <section className='properties'>Properties</section>
+      <Properties />
       <Banner title='Find your best Real Estate' src='./images/building.png' withTab={false} />
     </main>
   );
