@@ -14,6 +14,31 @@ function StoryItem(props) {
 }
 
 // ### LV.1
+
+function StoryList() {
+  const places = [
+    { id: 1, placeName: 'America', image: './images/america.png' },
+    { id: 2, placeName: 'Spain', image: './images/spain.png' },
+    { id: 3, placeName: 'London', image: './images/london.png' },
+    { id: 4, placeName: 'France', image: './images/france.png' },
+  ];
+  return (
+    <section className='stories'>
+      <div className='stories__title'>
+        <h1>We are available in many well know countries</h1>
+      </div>
+      <div className='stories__list'>
+        {places.map((item) => (
+          <StoryItem key={item.id} place={item.placeName} src={item.image} />
+        ))}
+        {/* <StoryItem place='America' src='./images/america.png' />
+        <StoryItem place='Spain' src='./images/spain.png' />
+        <StoryItem place='London' src='./images/london.png' />
+        <StoryItem place='France' src='./images/france.png' /> */}
+      </div>
+    </section>
+  );
+}
 function Banner(props) {
   return (
     <section className='hero'>
@@ -46,17 +71,7 @@ function App() {
           src='./images/banner.png'
           withTab={true}
         />
-        <section className='stories'>
-          <div className='stories__title'>
-            <h1>We are available in many well know countries</h1>
-          </div>
-          <div className='stories__list'>
-            <StoryItem place='America' src='./images/america.png' />
-            <StoryItem place='Spain' src='./images/spain.png' />
-            <StoryItem place='London' src='./images/london.png' />
-            <StoryItem place='France!' src='./images/france.png' />
-          </div>
-        </section>
+        <StoryList />
         <section className='properties'>Properties</section>
         <Banner title='Find your best Real Estate' src='./images/building.png' withTab={false} />
       </main>
