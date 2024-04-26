@@ -34,10 +34,13 @@ img {
 
 .main {
   min-height: calc(100vh - 64px - 250px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .hero__image__container {
   position: relative;
-  padding: 30px;
 }
 
 .hero__text {
@@ -82,4 +85,41 @@ p {
 
 .border-custom {
   border-radius: 20px 0 0 20px;
+}
+
+/* STORIES */
+
+.stories__title {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.stories__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.stories__list--item {
+  flex-basis: 150px;
+  flex-grow: 1;
+  background: wheat;
+  aspect-ratio: 3/4;
+  text-align: center;
+  position: relative;
+}
+
+.stories__list--item > h4 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+}
+
+.stories__list--item > img {
+  width: 100%;
+  height: auto;
 }
