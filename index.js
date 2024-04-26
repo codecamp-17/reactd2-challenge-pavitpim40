@@ -2,7 +2,7 @@
 const domRoot = document.getElementById('root');
 const root = ReactDOM.createRoot(domRoot);
 
-// ### LV.2
+// ### LV.3
 function StoryItem(props) {
   const { place, src } = props;
   return (
@@ -13,8 +13,7 @@ function StoryItem(props) {
   );
 }
 
-// ### LV.1
-
+// ### LV.2
 function StoryList() {
   const places = [
     { id: 1, placeName: 'America', image: './images/america.png' },
@@ -31,14 +30,11 @@ function StoryList() {
         {places.map((item) => (
           <StoryItem key={item.id} place={item.placeName} src={item.image} />
         ))}
-        {/* <StoryItem place='America' src='./images/america.png' />
-        <StoryItem place='Spain' src='./images/spain.png' />
-        <StoryItem place='London' src='./images/london.png' />
-        <StoryItem place='France' src='./images/france.png' /> */}
       </div>
     </section>
   );
 }
+
 function Banner(props) {
   return (
     <section className='hero'>
@@ -59,23 +55,36 @@ function Banner(props) {
   );
 }
 
+// ### LV.1
+
+function Navbar() {
+  return <header className='nav'>NavBar</header>;
+}
+function Footer() {
+  return <footer className='footer'>Footer</footer>;
+}
+function Main() {
+  return (
+    <main className='main'>
+      <Banner
+        title='Easy way to find a perfect property'
+        src='./images/banner.png'
+        withTab={true}
+      />
+      <StoryList />
+      <section className='properties'>Properties</section>
+      <Banner title='Find your best Real Estate' src='./images/building.png' withTab={false} />
+    </main>
+  );
+}
 // ## APP
 
 function App() {
   return (
     <>
-      <header className='nav'>NavBar</header>
-      <main className='main'>
-        <Banner
-          title='Easy way to find a perfect property'
-          src='./images/banner.png'
-          withTab={true}
-        />
-        <StoryList />
-        <section className='properties'>Properties</section>
-        <Banner title='Find your best Real Estate' src='./images/building.png' withTab={false} />
-      </main>
-      <footer className='footer'>Footer</footer>
+      <Navbar />
+      <Main />
+      <Footer />
     </>
   );
 }
